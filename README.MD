@@ -1,4 +1,6 @@
-# SAE 1.03 #
+# SAE 1.03 - Installation d'un poste informatique #
+
+
 
 ## Compétence ciblée : ##
 
@@ -18,10 +20,10 @@ C3 APC 3 : Installer et configurer un système d’exploitation et des outils de
 
 ## Livrables attendus : ##
 
-Dossier d’étude et de choix des solutions
-Schéma de l’architecture logicielle
-Notice d’utilisation
-Présentation orale
+- Dossier d’étude et de choix des solutions
+- Schéma de l’architecture logicielle
+- Notice d’utilisation
+- Présentation orale
 
 # Collaborateurs #
 
