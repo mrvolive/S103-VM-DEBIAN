@@ -1,6 +1,6 @@
 # SAE 1.03 - Installation d'un poste informatique #
 
-
+<img src="https://github.com/mrvolive/sae103/blob/main/other/qGPkr.png?raw=true" alt="Une salle de serveur digne d'un film d'action hollywoodien" width="400"/>
 
 ## Compétence ciblée : ##
 
