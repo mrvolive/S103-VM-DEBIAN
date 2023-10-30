@@ -39,7 +39,7 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Rapport d'analyse des besoins" color="#8cb6ce" meeting="false" start="2023-10-30" duration="7" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+        <task id="0" name="Rapport d'analyse des besoins" color="#8cb6ce" meeting="false" start="2023-10-30" duration="8" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
             <notes>
                 <![CDATA[⚠️ **Rapport de** ********6 PAGES MAXIMUM********
 
@@ -80,7 +80,7 @@ Le MCD proposé ("simplification" de la réalité) doit être cohérent avec les
                     <![CDATA[Une page de garde comportant les informations suivantes : logo du département, date du rapport, nom et groupe des participants (préciser le numéro du groupe de TP d'appartenance) et un titre :  "Dossier d'étude et de choix d'un poste de travail pour le développement"]]>
                 </notes>
             </task>
-            <task id="2" name="Présentation de la demande du client" color="#00ccff" meeting="false" start="2023-10-30" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+            <task id="2" name="Présentation de la demande du client" color="#00ccff" meeting="false" start="2023-10-31" duration="1" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                 <notes>
                     <![CDATA[Une courte présentation de la demande formulée par le client et de la façon dont vous comptez répondre dans les parties qui suivent
 
@@ -93,7 +93,7 @@ Le MCD proposé ("simplification" de la réalité) doit être cohérent avec les
                 <depend id="3" type="2" difference="0" hardness="Strong"/>
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="3" name="Description des architectures matérielles proposées" color="#8cb6ce" meeting="false" start="2023-10-31" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+            <task id="3" name="Description des architectures matérielles proposées" color="#8cb6ce" meeting="false" start="2023-11-01" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                 <notes>
                     <![CDATA[* Vous devez à minima proposer un ordinateur portable et un ordinateur fixe au format tour que vous définirez en choisissant chaque composant.
 * Prévoir dans tous les cas clavier, souris, écran, etc. (dans le cas d'un portable ce qu'il faut pour l'utiliser sous la forme d'un poste fixe).
@@ -104,7 +104,7 @@ Le MCD proposé ("simplification" de la réalité) doit être cohérent avec les
                 </notes>
                 <depend id="12" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="5" name="Description des architectures logicielles proposées" color="#8cb6ce" meeting="false" start="2023-10-31" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
+            <task id="5" name="Description des architectures logicielles proposées" color="#8cb6ce" meeting="false" start="2023-11-01" duration="3" complete="0" thirdDate="2023-10-27" thirdDate-constraint="0" expand="true">
                 <notes>
                     <![CDATA[* Choix d'un système d'exploitation (intégrer nécessairement une distribution Linux).
 * Organisation du disque; comptes utilisateurs; etc.
@@ -114,7 +114,7 @@ Le MCD proposé ("simplification" de la réalité) doit être cohérent avec les
                 </notes>
                 <depend id="12" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="12" name="Préconisation d'un poste de développement" color="#9999ff" meeting="false" start="2023-11-03" duration="3" complete="0" thirdDate="2023-10-26" thirdDate-constraint="0" expand="true">
+            <task id="12" name="Préconisation d'un poste de développement" color="#9999ff" meeting="false" start="2023-11-04" duration="3" complete="0" thirdDate="2023-10-26" thirdDate-constraint="0" expand="true">
                 <notes>
                     <![CDATA[Préconisation d'un poste de développement (architecture matérielle et architecture logicielle préconisées) en justifiant le choix
 

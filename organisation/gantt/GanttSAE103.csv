@@ -1,5 +1,5 @@
 ID,Nom,Date de début,Date de fin,Durée,Avancée,Coût,Responsable,Prédécesseurs,Numéro hiérarchique,Ressources,Assignments,Nouvelle tâche,Lien internet,Notes
-0,Rapport d'analyse des besoins,30/10/2023,05/11/2023,7,0,0.0,,,1,,,,,"⚠️ **Rapport de** ********6 PAGES MAXIMUM********
+0,Rapport d'analyse des besoins,30/10/2023,06/11/2023,8,0,0.0,,,1,,,,,"⚠️ **Rapport de** ********6 PAGES MAXIMUM********
 
 - **Format :** **PDF**
 - **Nom :** `1_Analyse.pdf`
@@ -33,25 +33,25 @@ Le MCD proposé (""simplification"" de la réalité) doit être cohérent avec l
 5. Une explication et une **justification** de la modélisation choisie (explication du choix des entités et des associations, justifications des propriétés et des cardinalités)
 "
 1,"  Réalisation de la Page de Garde",30/10/2023,30/10/2023,1,0,0.0,Olivier MARAVAL,,1.1,Olivier MARAVAL,1:100.00,"#9999ff",,"Une page de garde comportant les informations suivantes : logo du département, date du rapport, nom et groupe des participants (préciser le numéro du groupe de TP d'appartenance) et un titre :  ""Dossier d'étude et de choix d'un poste de travail pour le développement"""
-2,"  Présentation de la demande du client",30/10/2023,30/10/2023,1,0,0.0,Sugdenaz EKICI,,1.2,Olivier MARAVAL;Sugdenaz EKICI,1:100.00;0:100.00,"#00ccff",,"Une courte présentation de la demande formulée par le client et de la façon dont vous comptez répondre dans les parties qui suivent
+2,"  Présentation de la demande du client",31/10/2023,31/10/2023,1,0,0.0,Sugdenaz EKICI,,1.2,Olivier MARAVAL;Sugdenaz EKICI,1:100.00;0:100.00,"#00ccff",,"Une courte présentation de la demande formulée par le client et de la façon dont vous comptez répondre dans les parties qui suivent
 
 * Vous travaillez dans une société qui est capable de fournir des configurations personnalisées à des clients.
 * Un client, qui est informaticien, a la demande suivante : il souhaite une configuration de travail lui permettant de faire du développement d'applications web.
 * Il souhaite avoir à disposition plusieurs outils / envionnements de développement et notamment : mariadb / mysql pour les BDD, python3 avec la possibilité d'avoir des environnements virtuels, flask, un serveur web.
   (ATTENTION : vous pouvez proposer dans la partie 4. d'autres outils que ceux notés ci-dessus - n'oubliez pas à ce moment là de justifier votre proposition). 
 "
-3,"  Description des architectures matérielles proposées",31/10/2023,02/11/2023,3,0,0.0,Valentin VIRET-JACQUOT,2,1.3,Valentin VIRET-JACQUOT;Olivier MARAVAL,3:100.00;1:100.00,,,"* Vous devez à minima proposer un ordinateur portable et un ordinateur fixe au format tour que vous définirez en choisissant chaque composant.
+3,"  Description des architectures matérielles proposées",01/11/2023,03/11/2023,3,0,0.0,Valentin VIRET-JACQUOT,2,1.3,Olivier MARAVAL;Valentin VIRET-JACQUOT,1:100.00;3:100.00,,,"* Vous devez à minima proposer un ordinateur portable et un ordinateur fixe au format tour que vous définirez en choisissant chaque composant.
 * Prévoir dans tous les cas clavier, souris, écran, etc. (dans le cas d'un portable ce qu'il faut pour l'utiliser sous la forme d'un poste fixe).
 * Prévoir des possibilités pour sauvegarder les fichiers de l'utilisateur (en local ou via le réseau).
 * Faire une liste des composants en intégrant un lien web permettant d'accéder à son descriptif et en indiquant un prix pour chacun.
 * Donner un coût prévisionnel pour chaque configuration.
 * etc."
-5,"  Description des architectures logicielles proposées",31/10/2023,02/11/2023,3,0,0.0,Yahia KHERZA,2,1.4,Yahia KHERZA;Sugdenaz EKICI,2:100.00;0:100.00,,,"* Choix d'un système d'exploitation (intégrer nécessairement une distribution Linux).
+5,"  Description des architectures logicielles proposées",01/11/2023,03/11/2023,3,0,0.0,Yahia KHERZA,2,1.4,Sugdenaz EKICI;Yahia KHERZA,0:100.00;2:100.00,,,"* Choix d'un système d'exploitation (intégrer nécessairement une distribution Linux).
 * Organisation du disque; comptes utilisateurs; etc.
 * Logiciels à installer (bureau / environnement si plusieurs choix possibles; éditeur; outil de développement, BDD; serveur web; etc.)
 * Si les logiciels sont payants les budgéter.
 * etc."
-12,"  Préconisation d'un poste de développement",03/11/2023,05/11/2023,3,0,0,,3;5,1.5,,,"#9999ff",,"Préconisation d'un poste de développement (architecture matérielle et architecture logicielle préconisées) en justifiant le choix
+12,"  Préconisation d'un poste de développement",04/11/2023,06/11/2023,3,0,0,,3;5,1.5,,,"#9999ff",,"Préconisation d'un poste de développement (architecture matérielle et architecture logicielle préconisées) en justifiant le choix
 
 * Discuter les avantages / inconvénients des différentes possibilitées décrites dans les parties 3. et 4.
 * Le prix final proposé.
