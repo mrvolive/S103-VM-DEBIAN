@@ -1,26 +1,32 @@
 \babel@toc {french}{}\relax 
 \thispagestyle {empty}
-\contentsline {chapter}{\numberline {1}Définition de la demande du client}{4}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Propositions d'architecture matérielle}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Ordinateur Fixe}{5}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Budget 1}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Budget 2}{5}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Ordinateur Portable}{5}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Budget 1}{5}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Budget 2}{5}{subsection.2.2.2}%
-\contentsline {chapter}{\numberline {3}Proposition d'architecture logicielle}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Système d'exploitation}{6}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}debian}{6}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}ubuntu}{6}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Organisation}{6}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Logiciels}{6}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Préconisation d'un poste de développement}{7}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Comparaison des propositions précédentes}{7}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Fixe 1}{7}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Fixe 2}{7}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Portable 1}{7}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Portable 2}{7}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2}Prix}{7}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Hardware}{7}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Software}{7}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Total}{7}{subsection.4.2.3}%
+\contentsline {chapter}{\numberline {1}Votre demande}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Résumé de votre demande}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Notre méthode}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Concernant l'architecture matérielle}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Concernant l'architecture logicielle}{4}{subsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.2.1}Le système d'exploitation}{4}{subsubsection.1.2.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2.2}La suite logicielle}{5}{subsubsection.1.2.2.2}%
+\contentsline {chapter}{\numberline {2}Propositions d'architecture matérielle}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Ordinateur Fixe}{6}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Budget 1}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Budget 2}{6}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Ordinateur Portable}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Budget 1}{6}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Budget 2}{6}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {3}Proposition d'architecture logicielle}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Système d'exploitation}{7}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}debian}{7}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}ubuntu}{7}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Organisation}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Logiciels}{7}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Préconisation d'un poste de développement}{8}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Comparaison des propositions précédentes}{8}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Fixe 1}{8}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Fixe 2}{8}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Portable 1}{8}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Portable 2}{8}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Prix}{8}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Hardware}{8}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Software}{8}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Total}{8}{subsection.4.2.3}%
