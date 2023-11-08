@@ -11,22 +11,26 @@
 \contentsline {section}{\numberline {2.1}Ordinateur Fixe}{6}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Budget 1}{6}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Budget 2}{6}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Ordinateur Portable}{6}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Budget 1}{6}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Budget 2}{6}{subsection.2.2.2}%
-\contentsline {chapter}{\numberline {3}Proposition d'architecture logicielle}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Système d'exploitation}{7}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}debian}{7}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}ubuntu}{7}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Organisation}{7}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Logiciels}{7}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Préconisation d'un poste de développement}{8}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Comparaison des propositions précédentes}{8}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Fixe 1}{8}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Fixe 2}{8}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Portable 1}{8}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Portable 2}{8}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2}Prix}{8}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Hardware}{8}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Software}{8}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Total}{8}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {2.1.3}Budget 3}{7}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Ordinateur Portable}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Budget 1}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Budget 2}{7}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {3}Proposition d'architecture logicielle}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Système d'exploitation}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Organisation du système}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Les comptes utilisateurs}{9}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Organisation du disque}{9}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Logiciels}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Logiciels essentiels}{9}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Options supplémentaires gratuites}{10}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Alternatives Payantes}{10}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Préconisation d'un poste de développement}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Comparaison des propositions précédentes}{11}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Fixe 1}{11}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Fixe 2}{11}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Portable 1}{11}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Portable 2}{11}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}Prix}{11}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Hardware}{11}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Software}{11}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Total}{11}{subsection.4.2.3}%
