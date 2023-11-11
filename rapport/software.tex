@@ -49,6 +49,19 @@ Vous aurez la possibilité d'ajouter un compte utilisateur pour chaque personne 
 
 \subsection{Organisation du disque}
 
+\subsubsection{Partitionnement}
+
+Nous n'effectueront pas de double-boot dans la mesure où Windows ne vous sera pas utile pour le développement web, nous nous contenterons donc d'une simple installation de Linux pour des raisons d'optimisation de stockage. Dans le cas où vous choisiriez un ordinateur tournant sur MacOS, nous laisserions le système d'exploitation d'origine pour des raisons de compatibilité et de confort utilisateur.\\
+
+Dans le cas de l'installation d'un Linux, nous partitionnerons le disque de la façon suivante :
+\begin{itemize}
+	\item \textit{/boot} : 300 Mio - Cette partition contiendra tout ce qui permet à l'OS de booter.
+	\item \textit{/} : Occupera l'espace restant du disque. Elle contiendra tous les fichiers de l'OS.
+\end{itemize}
+\vspace{10px}
+Nous n'avons pas inclus de partition \textbf{SWAP} puisque toutes nos configurations possèdent au moins 16Go de mémoire vive, vous ne devriez donc avoir aucun problème de stabilité. Par ailleurs, la fonction d'hibernation nécessiterait un swap au minimum équivalent à votre mémoire vive ce qui viendrait réduire l'espace de stockage dont vous disposez.
+
+\subsection{Arborescence des Fichiers}
 Chaque utilisateur aura son dossier dans \textit{/home/<nom-de-l'utilisateur>} dans lequel se trouvera son travail. Ce dossier ne sera pas accessible par les autres utilisateurs du système. Il trouvera à l'intérieur :
 \begin{itemize}
 	\item Un dossier \textbf{"projets"} ou placer ses travaux en cours, c'est dans ce dossier qu'il pourra cloner les dépôts git sur lesquels il collaborera.
@@ -60,7 +73,7 @@ Un dossier \textit{/home/public} sera accessible en lecture et en écriture par 
 
 \section{Logiciels}
 
-\subsection{Logiciels essentiels}
+\subsection{Logiciels essentiels}\label{3.3.1}
 
 \begin{itemize}
 	\item \textbf{Mozilla Firefox, Google Chrome et GNOME Web} : pour pouvoir tester vos sites sur un navigateur Gecko, Blink et Webkit.
@@ -72,7 +85,7 @@ Un dossier \textit{/home/public} sera accessible en lecture et en écriture par 
 	\item \textbf{Zoom, Discord et/ou Slack} pour la communication entre clients et collaborateurs.
 \end{itemize}
 
-\subsection{Options supplémentaires gratuites}
+\subsection{Options supplémentaires gratuites}\label{3.3.2}
 
 \begin{itemize}
 	\item \textbf{Pycharm} : un IDE python efficace pour le développement d'application web sous flask, plus complet que Visual Studio Code mais moins polyvalent.
