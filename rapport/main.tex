@@ -24,7 +24,7 @@
 \usepackage{abstract}
 %police et mise en page (marges) du document
 \usepackage[T1]{fontenc}
-\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=1.5cm, bottom=2cm, left=1.5cm, right=1.5cm]{geometry}
 %Pour les galerie d'images
 \usepackage{subfig}
 \usepackage{eurosym}
@@ -65,7 +65,7 @@ pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
 \thispagestyle{empty}
 
 
-
+\pagenumbering{gobble}
 \tableofcontents
 \thispagestyle{empty}
 
@@ -83,6 +83,9 @@ pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
 
 
 \newpage
+\pagenumbering{arabic}
+
+\setcounter{page}{5}
 
 \input{./besoins.tex}
 \input{./hardware.tex}
