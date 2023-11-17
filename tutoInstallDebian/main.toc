@@ -24,6 +24,8 @@
 \contentsline {section}{\numberline {2.3}Installer le support souris en mode texte}{10}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Modification du groupe staff}{10}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Modification de l'utilisateur msalomon}{10}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Configuration réseau}{11}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Répertoire partagé}{12}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Environnement de bureau}{13}{chapter.5}%
+\contentsline {section}{\numberline {2.6}Ajout de l'utilisateur visiteur}{10}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Création des clés SSH pour msalomon}{11}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Configuration réseau}{12}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Répertoire partagé}{13}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Environnement de bureau}{14}{chapter.5}%

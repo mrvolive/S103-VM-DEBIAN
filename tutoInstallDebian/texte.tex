@@ -19,14 +19,14 @@ Vous pouvez aussi commenter la première ligne en y ajoutant \texttt{\#} ou la s
 
 Votre fichier devrait avoir les lignes suivantes
 \begin{lstlisting}[style=tf]
-	deb http://ftp.fr.debian.org/debian bookworm main non-free-firmware contrib non-free
-	deb-src http://ftp.fr.debian.org/debian bookworm non-free-firmware main contrib non-free
-	
-	deb http://ftp.fr.debian.org/debian-security/ bookworm-security main non-free-firmware contrib non-free
-	deb-src http://ftp.fr.debian.org/debian-security/ bookworm-security main non-free-firmware contrib non-free
-	
-	deb http://ftp.fr.debian.org/debian bookworm-updates main non-free-firmware contrib non-free
-	deb-src http://ftp.fr.debian.org/debian bookworm-updates main non-free-firmware contrib non-free
+deb http://ftp.fr.debian.org/debian bookworm main non-free-firmware contrib non-free
+deb-src http://ftp.fr.debian.org/debian bookworm non-free-firmware main contrib non-free
+
+deb http://ftp.fr.debian.org/debian-security/ bookworm-security main non-free-firmware contrib non-free
+deb-src http://ftp.fr.debian.org/debian-security/ bookworm-security main non-free-firmware contrib non-free
+
+deb http://ftp.fr.debian.org/debian bookworm-updates main non-free-firmware contrib non-free
+deb-src http://ftp.fr.debian.org/debian bookworm-updates main non-free-firmware contrib non-free
 \end{lstlisting}
 
 Enfin, avec \texttt{nano}, vous pouvez valider vos modification en appuyant sur les touches \textbf{CTRL + O} puis \textbf{Entrée} et enfin \textbf{CTRL+X}
@@ -34,7 +34,7 @@ Enfin, avec \texttt{nano}, vous pouvez valider vos modification en appuyant sur 
 Vous pouvez maintenant mettre à jour la liste de paquets en utilisant la commande suivante :
 
 \begin{lstlisting}
-	apt update
+apt update
 \end{lstlisting}
 
 \section{Installer le support souris en mode texte}
@@ -42,7 +42,7 @@ Vous pouvez maintenant mettre à jour la liste de paquets en utilisant la comman
 Utilisez la commande suivante pour installer le paquet \texttt{gpm}, qui fournit le support de la souris dans le shell :
 
 \begin{lstlisting}
-	apt install -y gpm
+apt install -y gpm
 \end{lstlisting}
 
 Maintenant, vous pouvez utiliser \texttt{gpm} pour sélectionner, copier et coller du texte dans une console. Voici quelques commandes utiles :
@@ -58,7 +58,7 @@ Maintenant, vous pouvez utiliser \texttt{gpm} pour sélectionner, copier et coll
 Exécutez la commande suivante pour modifier le groupe \texttt{staff} et lui donner le \texttt{gid} 500
 
 \begin{lstlisting}
-	groupmod -g 500 staff
+groupmod -g 500 staff
 \end{lstlisting}
 
 \section{Modification de l'utilisateur msalomon}
@@ -74,5 +74,50 @@ La dernière commande supprimera le groupe au nom de l'utilisateur.
 \begin{lstlisting}
 usermod -u 2500 -g 500 -G adm msalomon
 chfn -f "Michel Salomon" -r "E004" -w "03.84.58.77.76" msalomon
-groupedel msalomon
+groupdel msalomon
 \end{lstlisting}
+
+\section{Ajout de l'utilisateur visiteur}
+Créez d'abord le groupe \texttt{external} avec le gid 1000 :
+\begin{lstlisting}
+groupadd -g 1000 external
+\end{lstlisting}
+
+Ensuite, créez l'utilisateur \texttt{visiteur} avec le uid 3000 et le gid 1000 :
+\begin{lstlisting}
+useradd -u 3000 -g 1000 -M -N -s /usr/sbin/nologin visiteur
+\end{lstlisting}
+\emph{Note : Les options -M et -N sont utilisées pour ne pas créer de répertoire personnel et ne pas créer de groupe pour l'utilisateur, respectivement.}\\
+
+Enfin, définissez le mot de passe pour l'utilisateur \texttt{visiteur} :
+\begin{lstlisting}
+echo 'visiteur:CqriT' | chpasswd
+\end{lstlisting}
+
+\section{Création des clés SSH pour msalomon}
+
+On va générer pour l'utilisateur \texttt{msalomon}
+\begin{itemize}
+\item une paire de clés ED25519
+\item une paire de clés RSA de 4096 bits
+\end{itemize}
+
+Passez à l'utilisateur \texttt{msalomon}. Pour cela, utilisez la commande suivante :
+
+\begin{lstlisting}
+su - msalomon
+\end{lstlisting}
+
+Créez une paire de clés ED25519 en utilisant la commande \texttt{ssh-keygen} suivante. Lorsqu'il vous sera demandé d'entrer une passphrase, tapez \texttt{azerty}.
+\begin{lstlisting}
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519
+\end{lstlisting}
+
+Répétez l'opération pour la paire de clés RSA de 4096 bits :
+\begin{lstlisting}
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
+\end{lstlisting}
+
+Vous aurez alors deux paires de clés SSH protégées par la passphrase \texttt{azerty} dans le répertoire \texttt{~/.ssh} de l'utilisateur \texttt{msalomon}
+
+Vous pouvez maintenant revenir au compte \texttt{root} en tapant \texttt{exit} dans le terminal

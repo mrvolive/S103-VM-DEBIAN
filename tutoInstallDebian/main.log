@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.3)  17 NOV 2023 06:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.11.3)  17 NOV 2023 08:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1363,7 +1363,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count349
 (title.tex
-<./images/InfoLogoQuadriH.png, id=114, 362.3136pt x 93.2283pt>
+<./images/InfoLogoQuadriH.png, id=122, 362.3136pt x 93.2283pt>
 File: ./images/InfoLogoQuadriH.png Graphic file (type png)
 <use ./images/InfoLogoQuadriH.png>
 Package pdftex.def Info: ./images/InfoLogoQuadriH.png  used on input line 5.
@@ -1427,17 +1427,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
 [9
 
-]) (reseau.tex [10]
+] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+
+ []
+
+) (reseau.tex [11]
 Chapitre 3.
-) (partage.tex [11
+) (partage.tex [12
 
 ]
 Chapitre 4.
-) (bureau.tex [12
+) (bureau.tex [13
 
 ]
 Chapitre 5.
-) [13
+) [14
 
 ] (main.aux)
  ***********
@@ -1445,16 +1450,16 @@ LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-23>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 20CC519A891071EAF09BFDA7F970E873;5125.
+(rerunfilecheck)             Checksum: A7FF0D1CCA61650B28D8283E63EF658C;5595.
  ) 
 Here is how much of TeX's memory you used:
- 26423 strings out of 474718
- 484119 string characters out of 5748457
+ 26460 strings out of 474718
+ 484548 string characters out of 5748457
  1968036 words of memory out of 5000000
- 47957 multiletter control sequences out of 15000+600000
+ 47979 multiletter control sequences out of 15000+600000
  574225 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,5n,133p,432b,1231s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,6n,133p,432b,1955s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\marav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
 1095.pk> <C:\Users\marav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecrm0600.pk> <C:\Users\marav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -1471,9 +1476,9 @@ marav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\
 Users\marav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk
 > <C:\Users\marav\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc2
 074.pk>
-Output written on main.pdf (13 pages, 233517 bytes).
+Output written on main.pdf (14 pages, 246700 bytes).
 PDF statistics:
- 746 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 234 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 801 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 
