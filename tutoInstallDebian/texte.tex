@@ -1,0 +1,78 @@
+\chapter{Configuration en mode texte}
+
+\section{Pré-requis}
+Connectez vous avec le compte root en utilisant les informations suivantes :
+\begin{itemize}
+	\item \textbf{login :} \texttt{root}
+	\item \textbf{Password :} \texttt{\$sae3*2023\$}
+\end{itemize}
+
+\section{Ajouter les dépôts supplémentaires}
+Ouvrez le fichier \textbf{sources.list} à l'aide d'un éditeur de texte. Par exemple, vous pouvez utiliser la commande suivante pour ouvrir le fichier avec l'éditeur de texte \texttt{nano} :
+\begin{lstlisting}
+	nano /etc/apt/sources.list
+\end{lstlisting}
+
+Dans le fichier \textbf{sources.list}, vous verrez des lignes commençant par \textbf{"deb"} suivies d'une URL. Ces lignes représentent les dépôts principaux (main). Pour ajouter les dépôts \textbf{"contrib"} et \textbf{"non-free"}, vous devez les ajouter à la fin de chaque ligne correspondante.
+
+Vous pouvez aussi commenter la première ligne en y ajoutant \texttt{\#} ou la supprimer si vous ne souhaitez pas utiliser les paquets du DVD (qui sont inutiles si vous avez une connexion internet)\\
+
+Votre fichier devrait avoir les lignes suivantes
+\begin{lstlisting}[style=tf]
+	deb http://ftp.fr.debian.org/debian bookworm main non-free-firmware contrib non-free
+	deb-src http://ftp.fr.debian.org/debian bookworm non-free-firmware main contrib non-free
+	
+	deb http://ftp.fr.debian.org/debian-security/ bookworm-security main non-free-firmware contrib non-free
+	deb-src http://ftp.fr.debian.org/debian-security/ bookworm-security main non-free-firmware contrib non-free
+	
+	deb http://ftp.fr.debian.org/debian bookworm-updates main non-free-firmware contrib non-free
+	deb-src http://ftp.fr.debian.org/debian bookworm-updates main non-free-firmware contrib non-free
+\end{lstlisting}
+
+Enfin, avec \texttt{nano}, vous pouvez valider vos modification en appuyant sur les touches \textbf{CTRL + O} puis \textbf{Entrée} et enfin \textbf{CTRL+X}
+
+Vous pouvez maintenant mettre à jour la liste de paquets en utilisant la commande suivante :
+
+\begin{lstlisting}
+	apt update
+\end{lstlisting}
+
+\section{Installer le support souris en mode texte}
+
+Utilisez la commande suivante pour installer le paquet \texttt{gpm}, qui fournit le support de la souris dans le shell :
+
+\begin{lstlisting}
+	apt install -y gpm
+\end{lstlisting}
+
+Maintenant, vous pouvez utiliser \texttt{gpm} pour sélectionner, copier et coller du texte dans une console. Voici quelques commandes utiles :
+\begin{itemize}
+\item \textbf{Pour sélectionner du texte :} Maintenez le \textbf{bouton gauche} de la souris enfoncé et faites glisser la souris sur le texte que vous souhaitez sélectionner.
+\item \textbf{Pour copier et coller le texte sélectionné :} Appuyez sur le \textbf{bouton du milieu} pour copier le texte sélectionné dans le presse-papiers.
+\item \textbf{Pour étendre la sélection :} Appuyez sur le \textbf{bouton droit} de la souris pour sélectionner le texte jusqu'au prochain espace. Vous pouvez aussi effectuer un \textbf{double-clic} pour le même effet.
+\item \textbf{Pour sélectionner la ligne entière :} Effectuez un \textbf{triple-clic} pour sélectionner l'entièreté d'une ligne.
+\end{itemize}
+
+\section{Modification du groupe staff}
+
+Exécutez la commande suivante pour modifier le groupe \texttt{staff} et lui donner le \texttt{gid} 500
+
+\begin{lstlisting}
+	groupmod -g 500 staff
+\end{lstlisting}
+
+\section{Modification de l'utilisateur msalomon}
+
+Executez les commandes suivantes pour assigner l'utilisateur aux groupes \texttt{staff} (qui sera son groupe principal) et au groupe \texttt{adm} puis enregistrer les informations suivantes :
+\begin{itemize}
+	\item \textbf{Full name} = Michel Salomon
+	\item \textbf{Room} = E004
+	\item \textbf{Work phone} = 03.84.58.77.76
+\end{itemize}
+La dernière commande supprimera le groupe au nom de l'utilisateur.
+
+\begin{lstlisting}
+usermod -u 2500 -g 500 -G adm msalomon
+chfn -f "Michel Salomon" -r "E004" -w "03.84.58.77.76" msalomon
+groupedel msalomon
+\end{lstlisting}

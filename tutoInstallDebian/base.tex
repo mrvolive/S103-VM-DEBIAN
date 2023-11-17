@@ -1,0 +1,147 @@
+\chapter{Installation du Système de Base}
+
+\section{Accéder au programme d'installation}
+
+Si votre pc démarre directement sur le programme d'installation, vous pouvez vous rendre directement à la section suivante.
+
+\begin{itemize}
+\item Connectez la clé USB bootable fournit à votre ordinateur. Cette dernière contient l'ISO Débian suivant : \textit{\href{https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.2.0-amd64-DVD-1.iso}{debian-12.2.0-amd64-DVD-1.iso}}
+\item Démarrez votre ordinateur et accédez au menu de démarrage du BIOS en appuyant sur la touche appropriée (généralement F2, F10, F12 ou Suppr) au démarrage de l'ordinateur.
+\item Sélectionnez la clé USB comme périphérique de démarrage et appuyez sur Entrée pour démarrer votre ordinateur à partir de la clé USB.\\
+\end{itemize}
+
+Vous vous déplacerez dans le menu d'installation avec les \textbf{Touches Fléchées}. La touche \textbf{Espace} sélectionne une option et la touche \textbf{Entrée} valide un choix.\\
+
+Vous serez accueilli par un écran d'installation vous indiquant plusieurs options.
+
+\section{Ecran d'installation}
+\begin{itemize}
+	\item Sélectionnez la deuxième option : \textbf{Install}
+\end{itemize}
+
+\section{Select a language}
+\begin{itemize}
+	\item Choisissez \textbf{French - Français} dans la liste et appuyez sur \textbf{Entrée}
+\end{itemize}
+
+\section{Choix de votre situation géographique}
+\begin{itemize}
+	\item Choisissez \textbf{France} dans la liste et appuyez sur \textbf{Entrée}
+\end{itemize}
+
+\section{Configurer le clavier}
+\begin{itemize}
+	\item Choisissez \textbf{Français} dans la liste
+\end{itemize}
+
+\section{Configurer le réseau}
+
+\begin{itemize}
+	\item Dans le champ \textbf{Nom de machine} inscrivez le texte : \texttt{poste-dev-1}
+	\item Laissez le champ \textbf{Domaine} vide
+\end{itemize}
+
+\section{Créer les utilisateurs et choisir les mots de passe}
+\begin{itemize}
+	\item Dans le champ \textbf{Mot de passe du superutilisateur (" root ")} écrivez : \texttt{\$sae3*2023\$}
+	\item Réécrivez le même mot de passe dans le champ \textbf{Confirmation du mot de passe}
+	\item Dans le champ \textbf{Nom complet du nouvel utilisateur} entrez : \texttt{Michel Salomon}
+	\item Dans le champ \textbf{Identifiant pour le compte utilisateur} entrez : \texttt{msalomon}
+	\item Dans le champ \textbf{Mot de passe pour le nouvel utilisateur} entrez : \texttt{CqriT}
+	\item Réécrivez le même mot de passe dans le champ \textbf{Confirmation du mot de passe}
+\end{itemize}
+
+\section{Partitionner les disques}
+\begin{itemize}
+	\item Dans la liste \textbf{Méthode de partionnement} sélectionnez la dernière option : \textbf{Manuel}
+	\item Sélectionnez dans la liste le disque sur lequel vous souhaitez installer Debian.
+	\item Répondez \textbf{Oui} à la question : \textit{"Faut-il créer une nouvelle table des partitions sur ce disque ?"}
+\end{itemize}
+
+\section{Partition /}
+	\begin{itemize}
+	\item Sélectionnez la nouvelle option venant d'apparaître sur la liste et terminant par \textbf{"Espace libre"}
+		\begin{itemize}
+			\item Sélectionnez \textbf{Créer une nouvelle partition}
+			\item Dans le champ \textbf{Nouvelle taille de la partition} entrez la valeur : \texttt{10 GB}
+			\item Dans la liste \textbf{Type de la nouvelle partition} sélectionnez : \textbf{Primaire}
+			\item Dans la liste \textbf{Emplacement de la nouvelle partition} sélectionnez : \textbf{Début}
+			\item Dans la liste \textbf{Caractéristiques de la partition} sélectionnez : \textbf{Fin du paramétrage de cette partition}\\	
+		\end{itemize}
+	\end{itemize}
+La nouvelle partition a du apparaitre en n°1 dans la liste.
+		
+\subsection{Partition swap}
+	\begin{itemize}
+		\item Sélectionnez de nouveau l'option terminant par \textbf{"Espace libre"}
+		\begin{itemize}
+			\item Sélectionnez \textbf{Créer une nouvelle partition}
+			\item Dans le champ \textbf{Nouvelle taille de la partition} entrez la valeur : \texttt{2 GB}
+			\item Dans la liste \textbf{Type de la nouvelle partition} sélectionnez : \textbf{Logique}
+			\item Dans la liste \textbf{Emplacement de la nouvelle partition} sélectionnez : \textbf{Début}
+			\item Dans la liste \textbf{Caractéristiques de la partition} sélectionnez : \textbf{Utiliser comme} et choisissez : \textbf{espace d'échange ("swap")} dans la liste qui vient d'apparaitre.
+			\item De retour dans la liste \textbf{Caractéristiques de la partition} sélectionnez : \textbf{Fin du paramétrage de cette partition}
+		\end{itemize}	
+	\end{itemize}
+	
+\subsection{Partition /opt}
+\begin{itemize}
+	\item Sélectionnez de nouveau l'option terminant par \textbf{"Espace libre"}
+	\begin{itemize}
+		\item Sélectionnez \textbf{Créer une nouvelle partition}
+		\item Dans le champ \textbf{Nouvelle taille de la partition} entrez la valeur : \texttt{10 GB}
+		\item Dans la liste \textbf{Type de la nouvelle partition} sélectionnez : \textbf{Logique}
+		\item Dans la liste \textbf{Emplacement de la nouvelle partition} sélectionnez : \textbf{Début}
+		\item Dans la liste \textbf{Caractéristiques de la partition} sélectionnez : \textbf{Point de montage} et choisissez : \textbf{/opt} dans la liste qui vient d'apparaitre.
+		\item De retour dans la liste \textbf{Caractéristiques de la partition} sélectionnez : \textbf{Fin du paramétrage de cette partition}
+	\end{itemize}	
+\end{itemize}
+
+\subsection{Partition /home}
+\begin{itemize}
+	\item Sélectionnez de nouveau l'option terminant par \textbf{"Espace libre"}
+	\begin{itemize}
+		\item Sélectionnez \textbf{Créer une nouvelle partition}
+		\item Dans le champ \textbf{Nouvelle taille de la partition} entrez la valeur : \texttt{100\%}
+		\item Dans la liste \textbf{Type de la nouvelle partition} sélectionnez : \textbf{Logique}
+		\item Dans la liste \textbf{Emplacement de la nouvelle partition} sélectionnez : \textbf{Début}
+		\item Dans la liste \textbf{Caractéristiques de la partition} sélectionnez : \textbf{Point de montage} et choisissez : \textbf{/home} dans la liste qui vient d'apparaitre.
+		\item De retour dans la liste \textbf{Caractéristiques de la partition} sélectionnez : \textbf{Fin du paramétrage de cette partition}
+	\end{itemize}	
+\end{itemize}
+
+
+
+\subsection{Finalisation des partitions}
+\begin{itemize}
+	\item Sélectionnez l'option \textbf{"Terminer le partitionnement et appliquer les changements"}
+	\item Répondez \textbf{Oui} à la question : \textit{Faut-il appliquer les changements sur les disques ?}\\
+\end{itemize}
+
+L'installation du système de base va alors commencer, vous pourrez suivre son avancement grâce à la barre de chargement. Ce processus durera plus ou moins longtemps selon les caractéristiques de votre machine.
+
+\section{Configurer l'outil de gestion des paquets}
+\begin{itemize}
+	\item Répondre \textbf{Non} à la question : \textit{Faut-il analyser d'autres supports d'installation ?}
+	\item Répondre \textbf{Oui} à la question : \textit{Faut-il utiliser un miroir sur le réseau ?}
+	\item Dans la liste \textbf{Pays du miroir de l'archive Debian} sélectionnez : \textbf{France}
+	\item Dans la liste \textbf{Miroir de l'archive Debian} sélectionnez : \textbf{ftp.fr.debian.org}
+	\item Laissez le champ \textbf{Mandataire HTTP} vide
+	\item Répondre \textbf{Non} à la question : \textit{Souhaitez-vous participer à l'étude statistique sur l'utilisation des paquets ?}
+\end{itemize}
+
+\section{Sélection des logiciels}
+\begin{itemize}
+	\item Décochez les logiciels sélectionnés par défaut dans la liste \textbf{Logiciels à installer} en utilisant la \textbf{Barre espace}
+	\item De la même façon, cochez les logiciels : \textbf{serveur SSH} et \textbf{utilitaires usuels du système} (seules ces deux cases doivent être cochées)
+	\item Une fois la sélection effectuée vous pouvez valider avec \textbf{Entrée}
+\end{itemize}
+
+\section{Configuration de grub-pc}
+\begin{itemize}
+	\item Répondre \textbf{Oui} à la question : \textit{"Installer le programme de démarrage GRUB sur le disque principal}
+	\item Dans la liste \textbf{Périphérique où sera installé le programme de démarrage} sélectionnez l'option indiquant le disque que vous venez de partitionner.
+\end{itemize}
+
+\section{Terminer l'installation}
+Si le message \textbf{Installation terminée} s'affiche vous pouvez sélectionner l'option \textbf{Continuer} qui redémarrera l'ordinateur. Pensez à retirer le support d'installation et vous devriez vous retrouver face à un terminal affichant un curseur clignotant juste après le texte : \texttt{poste-dev-1 login:}
