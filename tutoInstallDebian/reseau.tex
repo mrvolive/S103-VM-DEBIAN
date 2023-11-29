@@ -1,1 +1,74 @@
 \chapter{Configuration réseau}
+<<<<<<< HEAD
+
+\section{Adresse IP de la machine virtuelle et de l'hôte}
+
+\subsection{IP de la machine virtuelle}
+
+Vous pouvez accéder à l'adresse IP de la machine virtuelle en utilisant la commande suivante :
+
+\begin{lstlisting}
+ip addr show
+\end{lstlisting}
+
+Vous devriez avoir deux sections, celle qui vous intéresse est celle qui ne commence pas par \texttt{lo: <LOOPBACK}...
+
+Dans la section pertinente, votre adresse ip se trouve à droite du mot \texttt{inet}\\
+
+exemple : 
+\begin{lstlisting}[style=tf]
+inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamicenp0s3
+\end{lstlisting}
+ici, l'ip est \texttt{10.0.2.15}
+
+\subsection{IP de la machine hôte}
+Vous pouvez utiliser la commande suivante pour afficher la table de routage :
+\begin{lstlisting}
+ip route
+\end{lstlisting}
+Cette dernière vous donnera plusieurs valeurs et il est possible de déduire laquelle correspond à l'adresse ip de la machine hôte :
+\begin{lstlisting}[style=tf]
+default via 10.0.2.2 dev enp0s3
+10.0.2.0/24 dev enp0s3 proto kernel scope link src 10.0.2.15
+169.254.0.0/16 dev enp0s3 scope link metric 1000
+\end{lstlisting}
+ici on peut déduire que l'adresse ip de la machine hôte est \texttt{10.0.2.2}.\\
+
+\section{Fichier de configuration pour SSH}
+
+Passez à l'utilisateur \texttt{msalomon}. Pour cela, utilisez la commande suivante :
+
+\begin{lstlisting}
+su - msalomon
+\end{lstlisting}
+
+Réduisez l'accès au répertoire \textit{.ssh} en modifiant les droits d'accès avec la commande :
+
+\begin{lstlisting}
+chmod 700 ~/.ssh
+\end{lstlisting}
+
+Créez un fichier de configuration dans le dossier \texttt{.ssh}, réduisez les droits d'accès au seul propriétaire et ouvrez-le pour modification grâce aux commandes suivantes :
+\begin{lstlisting}
+touch ~/.ssh/config
+chmod 600 ~/.ssh/config
+nano .ssh/config
+\end{lstlisting}
+
+Écrire les informations suivantes dans le fichier qui vient de s'ouvrir et l'enregistrer
+
+\begin{lstlisting}[style=tf]
+Host machineHote
+	Hostname 10.0.2.2
+	User userHote
+	IdentityFile ~/.ssh/id_rsa
+\end{lstlisting}
+
+Enfin, vous pourrez copier la clé publique de la paire rsa dans le compte utilisateur sur la vraie machine via la commande suivante :
+
+\begin{lstlisting}
+ssh-copy-id -i ~/.ssh/id_rsa.pub machineHote
+\end{lstlisting}
+
+=======
+>>>>>>> 6e0e4c269c4e06128cc702a8f257ca79eca8d33b

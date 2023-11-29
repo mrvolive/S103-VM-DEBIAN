@@ -1,1 +1,464 @@
+<<<<<<< HEAD
 \chapter{Environnement de bureau}
+
+\section{Installation de la commande sudo}
+
+Puisqu'il est déconseillé de se connecter à l'environnement de bureau en tant que super-utilisateur, nous allons commencer par installer la commande \texttt{sudo} :
+
+\begin{lstlisting}
+apt install sudo
+\end{lstlisting}
+
+Nous allons maintenant ajouter l'utilisateur \texttt{msalomon} à la liste des utilisateurs ayant le droit d'utiliser cette commande. Pour ce faire, ouvrez le fichier /etc/sudoers avec l'éditeur de votre choix et ajouter une ligne \texttt{msalomon} sous la ligne root comme indiqué en \textbf{ligne 3} ci-dessous :
+
+\begin{lstlisting}[style=tf]
+# User privilege specification
+root	ALL=(ALL:ALL) ALL
+msalomon	ALL=(ALL:ALL) ALL
+\end{lstlisting}
+
+À partir de maintenant, nous effectuerons toutes les commandes sous l'utilisateur \texttt{msalomon}. Vous pouvez donc vous connecter avec ce dernier.
+
+\section{Installation du Bureau}
+
+\subsection{Préliminaire}
+
+Pour installer l'environnement de bureau \textbf{xfce4} ainsi que son gestionnaire de connexion \textbf{lightdm}, il nous suffit d'exécuter la commande suivante :
+
+\begin{lstlisting}
+sudo apt install xfce4
+\end{lstlisting}
+
+Vous pouvez alors redémarrer la machine et vous connecter sous le nom \texttt{msalomon} pour accéder à votre environnement de bureau.
+
+\subsection{Amélioration de la Résolution d'affichage}
+
+Sur votre bureau, effectuez les manipulations suivantes à l'aide de la souris et du clavier.
+
+\begin{verbatim}
+Applications > Paramètres > Affichage > Résolution : 1280x1024
+\end{verbatim}
+
+\subsection{Création des Espaces de Travail}
+
+\begin{verbatim}
+Applications > Paramètres > Espaces de travail > Général
+\end{verbatim}
+
+Vous pouvez alors modifier chacun des noms de ces espaces de travail en cliquant dessus, nous allons appeler les nôtres :
+
+\begin{enumerate}
+	\item \texttt{Internet}
+	\item \texttt{Bureautique}
+	\item \texttt{Développement}
+	\item \texttt{Test}
+\end{enumerate}
+
+Vous pouvez ensuite faire un clic-droit sur la barre de menu en haut de votre écran à droite sur les cases représentants vos espaces de travail et sélectionner \texttt{Propriétés}. Modifiez les options de la façon suivante :
+
+\begin{itemize}
+	\item \textbf{Apparence :} Boutons
+	\item \textbf{Nombre de lignes :} 2
+\end{itemize}
+
+\section{Installation de gnome terminal et suppression de Xterm}
+
+Ouvrez le terminal à l'aide de la combinaison de touches : \texttt{CTRL + ALT + T} et entrez les commandes suivantes pour ajouter \texttt{gnome-terminal} et supprimer \texttt{xterm} :
+
+\begin{lstlisting}
+sudo apt install gnome-terminal
+sudo apt remove xterm
+\end{lstlisting}
+
+\chapter{Outils divers, thèmes et icônes}
+
+\section{Installation de Google Chrome}
+
+\subsection{Prérequis avant l'installation de Google Chrome}
+
+On va tout d'abord vérifier la présence de paquets cruciaux pour le processus d'installation. Ils incluent software-properties-common, apt-transport-https, ca-certificates et curl.
+
+Vous pouvez installer ces paquets en exécutant la commande suivante :
+
+\begin{lstlisting}
+sudo apt install software-properties-common apt-transport-https ca-certificates curl
+\end{lstlisting}
+
+\subsection{Importer le dépôt Google Chrome APT}
+
+On va d'abord importer la clé GPG pour la signature numérique grâce à la commande suivante :
+
+\begin{lstlisting}
+curl -fSsL https://dl.google.com/linux/linux\_signing\_key.pub | sudo gpg --dearmor | sudo tee /usr/share/keyrings/google-chrome.gpg >> /dev/null
+\end{lstlisting}
+
+Après avoir importé avec succès la clé GPG, importez le dépôt Google Chrome en exécutant la commande suivante :
+
+\begin{lstlisting}
+echo deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt update
+\end{lstlisting}
+
+\subsection{Installer Google Chrome}
+
+Pour installer la version stable de Google Chrome, exécutez la commande suivante :
+
+\begin{lstlisting}
+sudo apt install google-chrome-stable
+\end{lstlisting}
+
+Vous pouvez maintenant lancer \texttt{Google Chrome} en cliquant sur l'icône internet sur le dock en bas de votre écran et vérifier que la case \textbf{Définit Google Chrome comme navigateur par défaut} soit cochée avant d'appuyer sur \texttt{OK}
+
+\section{Installer Firefox 119}
+
+Exécutez les commandes suivantes pour récupérer la version de firefox qui nous intéresse, la décompresser dans le répertoire \texttt{/opt} et créer un lien symbolique qui permettra l'execution via une commande terminal.
+
+\begin{lstlisting}
+wget https://ftp.mozilla.org/pub/firefox/releases/119.0/linux-x86_64/fr/firefox-119.0.tar.bz2
+sudo tar xf firefox-119.0.tar.bz2 -C /opt
+sudo ln -s /opt/firefox/firefox /usr/local/bin/firefox
+sudo nano /usr/share/applications/firefox-stable.desktop
+\end{lstlisting}
+
+La dernière commande vous a ouvert un document dans lequel vous pourrez copier le texte suivant :
+
+\begin{lstlisting}[style=tf]
+[Desktop Entry]
+Name=Firefox Stable
+Comment=Web Browser
+Exec=/opt/firefox/firefox %u
+Terminal=false
+Type=Application
+Icon=/opt/firefox/browser/chrome/icons/default/default128.png
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+Actions=Private;
+
+[Desktop Action Private]
+Exec=/opt/firefox/firefox --private-window %u
+Name=Open in private mode
+\end{lstlisting}
+
+\section{Installer Tor Browser 13.0.5}
+
+Exécutez les commandes suivantes pour installer la version 13.0.5 de \texttt{TOR Browser},dans le répertoire /opt et permettre à l'utilisateur msalomon de l'enregistrer dans le menu et l'utiliser. Il est malheureusement impossible de retrouver la version 13.0.1 de \texttt{TOR} sur leur serveur à ce jour.
+
+\begin{lstlisting}
+wget https://www.torproject.org/dist/torbrowser/13.0.5/tor-browser-linux64-13.0.5_ALL.tar.xz
+sudo tar xf tor-browser-linux64-13.0.5_ALL.tar.xz -C /opt
+sudo chown -R msalomon:staff /opt/tor-browser/
+./start-tor-browser.desktop --register-app
+\end{lstlisting}
+
+\section{Installer LibreOffice 7.6.2}
+
+Les commandes suivantes vont vous permettre de récupérer l'archive \texttt{.deb} de l'application et de les installer dans le répertoire opt. La dernière commande permettra de supprimer le dossier contenant les \texttt{.deb} qui ne sont plus nécessaire après l'installation.
+
+\begin{lstlisting}
+wget https://downloadarchive.documentfoundation.org/libreoffice/old/7.6.2.1/deb/x86_64/LibreOffice_7.6.2.1_Linux_x86-64_deb.tar.gz
+sudo tar xf LibreOffice_7.6.2.1_Linux_x86-64_deb -C /opt
+sudo apt install /opt/LibreOffice_7.6.2.1_Linux_x86-64_deb/DEBS/*
+sudo rm -rf /opt/LibreOffice_7.6.2.1_Linux_x86-64_deb/
+\end{lstlisting}
+
+\section{Installer Foxit PDF Reader}
+
+\subsection{Téléchager et enregistrer l'archive}
+
+Vous pouvez télécharger l'archive à l'adresse suivante, enregistrez là dans \texttt{/home/msalomon} :
+
+\begin{lstlisting}
+https://www.foxit.com/fr/downloads/pdf-reader-thanks.html?product=Foxit-Reader\&platform=Linux-64-bit\&version=\&package\_type=\&language=French\&formId=download-reader
+\end{lstlisting}
+
+\subsection{Installation}
+
+Utilisez les commandes suivantes pour lancer l'assistant d'installation :
+
+\begin{lstlisting}
+sudo tar xf FoxitReader*.tar.gz
+sudo chmod a+x FoxitReader*.run
+sudo ./FoxitReader*.run
+\end{lstlisting}
+
+Ne modifiez pas la destination d'installation (elle pointe déjà vers \texttt{opt/}), acceptez les conditions d'utilisations et terminez l'installation du logiciel.
+
+\subsection{Changement des droits d'utilisation}
+
+Nous allons uniquement donner les droits de lecture, modification et exécution à l'utilisateur \texttt{msalomon} grâce aux commandes suivantes :
+
+\begin{lstlisting}
+sudo chown -R msalomon:root /opt/foxitsoftware/
+sudo chmod -R 700 /opt/foxitsoftware/
+\end{lstlisting}
+
+\section{Installation de Git, Ark, Filezilla et Wireshark}
+
+\begin{lstlisting}
+sudo apt install git ark filezilla wireshark
+\end{lstlisting}
+
+Sélectionnez Oui à la question lors de la configuration de \texttt{wireshark-common} puis ajoutez l'utilisateur \texttt{msalomon} au groupe \texttt{wireshark}
+
+\begin{lstlisting}
+sudo usermod -a -G wireshark msalomon
+\end{lstlisting}
+
+Reconnectez-vous à votre session pour pouvoir lancer wireshark et capturer les paquets sous l'utilisateur \texttt{msalomon}
+
+\section{Installation des outils de travail collaboratif}
+
+\subsection{Installation de Discord}
+
+Téléchargez l'archive discord à l'adresse suivante et enregistrez là dans le répertoire \texttt{/home/msalomon} :
+
+\begin{lstlisting}
+https://discord.app/api/download?platform=linux&format=tar.gz
+\end{lstlisting}
+
+Décompressez l'archive dans le dossier /opt et créez un lien pour pouvoir le lancer depuis le terminal grâce aux commandes qui suivent :
+
+\begin{lstlisting}
+sudo tar -xvzf discord*.tar.gz -C /opt
+sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
+\end{lstlisting}
+
+Ouvrez le fichier \texttt{discord.desktop} à l'aide de la commande suivante :
+
+\begin{lstlisting}
+sudo nano /opt/Discord/discord.desktop
+\end{lstlisting}
+
+Et modifiez les lignes \texttt{Exec} et \texttt{Icon} comme ci-dessous :
+
+\begin{lstlisting}[style=tf]
+Exec=/usr/bin/Discord
+Icon=/opt/Discord/discord.png
+\end{lstlisting}
+
+Enregistrez le fichier et copiez-le dans le dossier que le système pourra utiliser pour créer l'entrée de menu correspondante grâce à la commande suivante :
+
+\begin{lstlisting}
+sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
+\end{lstlisting}
+
+\subsection{Installation de Zoom}
+
+Pour installer zoom dans le répertoire \texttt{/opt/} il vous suffit d'exécuter les lignes suivantes dans le terminal :
+
+\begin{lstlisting}
+wget https://zoom.us/client/latest/zoom_amd64.deb
+sudo apt install ./zoom\_amd64.deb
+\end{lstlisting}
+
+\section{Installation des Éditeurs/IDE}
+
+\subsection{Installation de Sublime Text}
+
+Exécutez les commandes suivantes pour installer \texttt{Sublime Text} depuis les dépôts Sublime Text :
+
+\begin{lstlisting}
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt install apt-transport-https
+sudo apt update
+sudo apt install sublime-text
+\end{lstlisting}
+
+\subsection{Installation de Visual Studio Code}
+
+Exécutez les commandes suivantes pour installer \texttt{Visual Studio Code} depuis les dépôts Microsoft:
+
+\begin{lstlisting}
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft-archive-keyring.gpg
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt update
+sudo apt install code
+\end{lstlisting}
+
+\subsection{Installation de PhpStorm}
+Téléchargez l'archive à cette adresse : \href{https://www.jetbrains.com/phpstorm/download/}{https://www.jetbrains.com/phpstorm/download/} et enregistrez là dans \texttt{/home/msalomon/}.
+
+Exécutez les commandes suivantes pour installer le programme dans  le dossier \texttt{/opt/} et le lancer :
+
+\begin{lstlisting}
+sudo tar -xzf PhpStorm-*.tar.gz -C /opt
+/opt/PhpStorm*/bin/phpstorm.sh
+\end{lstlisting}
+
+Une fois sur l'écran d'accueil, cliquez sur l'engrenage en bas à gauche et sélectionnez l'option \textbf{Create Desktop Entry}
+
+\begin{lstlisting}
+sudo apt install menulibre
+\end{lstlisting}
+
+\subsection{Installation de Looping}
+
+\subsubsection{Wine et Looping}
+
+\begin{lstlisting}
+sudo apt install wine
+wget https://www.looping-mcd.fr/Looping.zip
+ark -b Looping.zip
+sudo mkdir /opt/looping-mcd/
+sudo mv Looping.exe /opt/looping-mcd/Looping.exe
+wine /opt/looping-mcd/Looping.exe
+\end{lstlisting}
+
+\subsubsection{}
+
+
+\chapter{LAMP}
+
+\section{Installation d'Apache}
+
+Commencez par exécuter la commande \texttt{apt} fournie pour actualiser le cache du dépôt de paquets local, ce qui mettra à jour les listes de paquets et mettra à niveau les paquets installés.
+
+\begin{lstlisting}
+sudo apt update && sudo apt upgrade -y
+\end{lstlisting}
+
+Avec vos dépôts et paquets maintenant à jour, procédez à l'installation du serveur web Apache à partir du dépôt officiel.
+
+\begin{lstlisting}
+sudo apt install apache2* -y
+\end{lstlisting}
+
+Pour démarrer le service de votre serveur web Apache2, exécutez la commande \texttt{systemctl start} fournie ci-dessous.
+
+\begin{lstlisting}
+sudo systemctl start apache2
+\end{lstlisting}
+
+Après avoir démarré votre serveur web, vous pouvez également exécuter la commande pour activer le service Apache2 afin qu'il démarre automatiquement après un redémarrage.
+
+\begin{lstlisting}
+sudo systemctl enable apache2
+\end{lstlisting}
+
+Vérifions maintenant si notre serveur Apache2 fonctionne correctement. Pour cela, ouvrez un navigateur web et entrez \texttt{http://localhost} dans la barre d'adresse.
+
+\section{Configuration de MariaDB}
+
+\subsection{Installation de MariaDB}
+
+Pour utiliser le serveur de base de données MariaDB, exécutez la commande fournie pour l'installer :
+
+\begin{lstlisting}
+sudo apt install mariadb-* -y
+\end{lstlisting}
+
+Ensuite, démarrez, activez et vérifiez le statut du service de votre serveur de base de données MariaDB.
+
+\begin{lstlisting}
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+sudo systemctl status mariadb
+\end{lstlisting}
+
+Connectez-vous en exécutant la commande fournie.
+\begin{lstlisting}
+sudo mariadb
+\end{lstlisting}
+
+\subsection{Création de la base de Données}
+
+\begin{lstlisting}
+CREATE DATABASE BDD_msalomon;
+CREATE USER 'msalomon'@'%' IDENTIFIED BY 'CqriT';
+GRANT ALL PRIVILEGES ON  *.* To 'msalomon'@'%';
+FLUSH PRIVILEGES;
+\end{lstlisting}
+
+\section{Mise en place de php et de phpMyAdmin}
+
+\subsection{Installation de php et de phpMyAdmin}
+
+Pour installer \texttt{php}, exécutez la commande fournie ci-dessous :
+
+\begin{lstlisting}
+sudo apt install php libapache2-mod-php php-mysql -y
+\end{lstlisting}
+
+Puis exécutez la commande suivante pour installer \texttt{phpmyadmin} :
+
+\begin{lstlisting}
+sudo apt install phpmyadmin
+\end{lstlisting}
+
+Pendant l'installation de phpmyadmin, sélectionnez \texttt{apache2} et \texttt{No} à la question de configuration de la base de donnée.
+
+\subsection{Vérification des informations PHP sur Debian}
+
+Commencez par créer un fichier \texttt{php} nommé \texttt{info.php} dans le répertoire Apache2 à l'aide de l'éditeur nano :
+
+\begin{lstlisting}
+sudo nano /var/www/html/info.php
+\end{lstlisting}
+
+Ensuite, ajoutez la ligne suivante au fichier, qui affichera des informations détaillées sur l'installation et la configuration de \texttt{php} :
+
+\begin{lstlisting}[style=tf]
+<?php phpinfo(); ?>
+\end{lstlisting}
+
+Maintenant, ouvrez un navigateur web et entrez l'URL suivante pour voir votre page web déployée avec succès à l'aide de la pile LAMP :
+
+\begin{lstlisting}
+http://localhost/info.php
+\end{lstlisting}
+
+Cela nous permet d'observer que notre site web d'exemple est hébergé sur un serveur web Apache. Nous testerons ensuite en profondeur la fonctionnalité de notre pile LAMP en créant un hôte virtuel et en déployant un site web \texttt{php} sur celui-ci, ainsi qu'en nous connectant à une base de données MariaDB.
+
+\section{Mise en place de Python et de Flask}
+
+\subsection{Installation de Python}
+Exécutez la commande suivante pour installer Python sur votre système :
+
+\begin{lstlisting}
+sudo apt install python3 python3-pip python3-venv
+\end{lstlisting}
+
+\subsection{Création de l'environnement virtuel}
+
+\begin{lstlisting}
+python3 -m venv env1
+source env1/bin/activate
+pip3 install flask
+\end{lstlisting}
+
+Quittez l'environnement virtuel en tapant \texttt{exit}.
+
+\begin{lstlisting}
+mkdir public_web
+nano public_web/hello.py
+\end{lstlisting}
+
+\begin{lstlisting}[style=tf]
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+	return 'Hello world!'
+\end{lstlisting}
+
+Démarrer le serveur web avec le fichier python dans un terminal avec la commande suivante :
+\begin{lstlisting}
+FLASK_APP=hello.py flask run --port=8080 >/dev/null 2>&1
+\end{lstlisting}
+
+\chapter{Personnalisation du Bureau}
+
+\subsection{Installation de MenuLibre}
+
+Vous pouvez installez \texttt{MenuLibre} depuis le dépôt officiel Debian grâce à la commande suivante :
+
+
+
+=======
+\chapter{Environnement de bureau}
+>>>>>>> 6e0e4c269c4e06128cc702a8f257ca79eca8d33b
