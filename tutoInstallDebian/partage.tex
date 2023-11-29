@@ -5,7 +5,7 @@
 Récupérer l'image iso des Guest Additions au niveau de \href{https://download.virtualbox.org/virtualbox/}{https://download.virtualbox.org/virtualbox/}, vous pouvez utiliser le lien ci-dessous en remplaçant le mot \texttt{VERSION} par votre numéro de version
 
 \begin{lstlisting}
-	https://download.virtualbox.org/virtualbox/VERSION/VBoxGuestAdditions_VERSION.iso
+https://download.virtualbox.org/virtualbox/VERSION/VBoxGuestAdditions_VERSION.iso
 \end{lstlisting}
 
 Démarrer la machine virtuelle et se connecter en super-utilisateur, puis faire les manipulations qui suivent pour insérer l'ISO dans le lecteur virtuel de la machine virtuelle :
@@ -20,17 +20,17 @@ Démarrer la machine virtuelle et se connecter en super-utilisateur, puis faire 
 Créer le répertoire qui doit servir de point de montage s'il n'existe pas déjà
 
 \begin{lstlisting}
-	mkdir /media/cdrom
+mkdir /media/cdrom
 \end{lstlisting}
 
 Exécutez les commandes suivantes pour monter le CD dans ce répertoire, installer le nécessaire pour l'installation du contenu du disque et enfin lancer l'installateur présent sur ce disque.
 
 \begin{lstlisting}
-	mount -t iso9660 /dev/cdrom /media/cdrom
-	apt update
-	apt install -y build-essential linux-headers-`uname -r`
-	cd /media/cdrom
-	./VBoxLinuxAdditions.run
+mount -t iso9660 /dev/cdrom /media/cdrom
+apt update
+apt install -y build-essential linux-headers-`uname -r`
+cd /media/cdrom
+./VBoxLinuxAdditions.run
 \end{lstlisting}
 
 Redémarrer votre machine virtuelle à la fin de l'installation
@@ -40,7 +40,7 @@ Redémarrer votre machine virtuelle à la fin de l'installation
 Reconnectez-vous en super-utilisateur et confirmez qu'il puisse accéder au répertoire partagé en Lecture/Écriture grâce à la commande suivante :
 
 \begin{lstlisting}
-	ls -l / |grep localhome|cut -d " " -f 1
+ls -l / |grep localhome|cut -d " " -f 1
 \end{lstlisting}
 
 À partir de la deuxième lettre de la chaine de caractère qui apparaît, vous devez avoir, au minimum, rw (normalement rwx).\\
@@ -48,5 +48,5 @@ Reconnectez-vous en super-utilisateur et confirmez qu'il puisse accéder au rép
 On va maintenant permettre à l'utilisateur msalomon d'avoir les droits en lecture et en écriture sur le dossier en l'ajoutant au groupe vboxsf:
 
 \begin{lstlisting}
-	usermod -aG vboxsf msalomon
+usermod -aG vboxsf msalomon
 \end{lstlisting}

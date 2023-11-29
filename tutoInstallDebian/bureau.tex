@@ -163,7 +163,7 @@ sudo rm -rf /opt/LibreOffice_7.6.2.1_Linux_x86-64_deb/
 
 \section{Installer Foxit PDF Reader}
 
-\subsection{Téléchager et enregistrer l'archive}
+\subsection{Télécharger et enregistrer l'archive}
 
 Vous pouvez télécharger l'archive à l'adresse suivante, enregistrez là dans \texttt{/home/msalomon} :
 
@@ -297,6 +297,8 @@ sudo apt install menulibre
 
 \subsubsection{Wine et Looping}
 
+Exécutez les commandes suivantes pour installer \texttt{Looping} et le lancer grâce à \texttt{wine} :
+
 \begin{lstlisting}
 sudo apt install wine
 wget https://www.looping-mcd.fr/Looping.zip
@@ -306,7 +308,31 @@ sudo mv Looping.exe /opt/looping-mcd/Looping.exe
 wine /opt/looping-mcd/Looping.exe
 \end{lstlisting}
 
-\subsubsection{}
+\subsubsection{Ajout au menu et au terminal}
+
+Exécutez la commande suivante pour ajouter la commande \texttt{looping} au terminal
+\begin{lstlisting}
+echo "alias looping='wine /opt/looping-mcd/Looping.exe'" >> .bashrc
+\end{lstlisting}
+
+Puis exécutez les commandes suivantes pour l'ajouter au menu
+
+\begin{lstlisting}
+cd /usr/share/applications
+sudo touch Looping.desktop
+sudo nano Looping.desktop	
+\end{lstlisting}
+
+\begin{lstlisting}[style=tf]
+[Desktop Entry]
+Name=Looping MCD
+Comment=Editeur de MCD
+Exec=wine "/opt/looping-mcd/Looping.exe"
+Terminal=false
+Type=Application
+Icon=wine-stable
+Categories=Graphics;
+\end{lstlisting}
 
 
 \chapter{LAMP}
@@ -339,9 +365,9 @@ sudo systemctl enable apache2
 
 Vérifions maintenant si notre serveur Apache2 fonctionne correctement. Pour cela, ouvrez un navigateur web et entrez \texttt{http://localhost} dans la barre d'adresse.
 
-\section{Configuration de MariaDB}
+\section{Installation de MariaDB}
 
-\subsection{Installation de MariaDB}
+\subsection{Préparation de MariaDB}
 
 Pour utiliser le serveur de base de données MariaDB, exécutez la commande fournie pour l'installer :
 
@@ -371,9 +397,9 @@ GRANT ALL PRIVILEGES ON  *.* To 'msalomon'@'%';
 FLUSH PRIVILEGES;
 \end{lstlisting}
 
-\section{Mise en place de php et de phpMyAdmin}
+\section{Installation de php et de phpMyAdmin}
 
-\subsection{Installation de php et de phpMyAdmin}
+\subsection{Préparation de php et de phpMyAdmin}
 
 Pour installer \texttt{php}, exécutez la commande fournie ci-dessous :
 
@@ -411,9 +437,9 @@ http://localhost/info.php
 
 Cela nous permet d'observer que notre site web d'exemple est hébergé sur un serveur web Apache. Nous testerons ensuite en profondeur la fonctionnalité de notre pile LAMP en créant un hôte virtuel et en déployant un site web \texttt{php} sur celui-ci, ainsi qu'en nous connectant à une base de données MariaDB.
 
-\section{Mise en place de Python et de Flask}
+\section{Installation de Python et de Flask}
 
-\subsection{Installation de Python}
+\subsection{Installation des paquets nécessaires}
 Exécutez la commande suivante pour installer Python sur votre système :
 
 \begin{lstlisting}
@@ -452,6 +478,126 @@ FLASK_APP=hello.py flask run --port=8080 >/dev/null 2>&1
 
 \chapter{Personnalisation du Bureau}
 
-\subsection{Installation de MenuLibre}
+\section{Modification du menu avec MenuLibre}
 
 Vous pouvez installez \texttt{MenuLibre} depuis le dépôt officiel Debian grâce à la commande suivante :
+
+\begin{lstlisting}
+sudo apt install menulibre
+\end{lstlisting}
+
+Lancer \texttt{Editeur de Menus} dans \texttt{Applications > Paramètres} et effectuez les modifications suivantes :
+\begin{itemize}
+	\item Changez le nom de la catégorie \texttt{Développement} en \texttt{Développement web} et enregistrez.
+	\item Déroulez le menu \texttt{Développement web} et cliquez sur \texttt{Python (v3.11)}. Décochez \textbf{Ne pas afficher dans le menu}.
+\end{itemize}
+
+\section{Création de lanceurs sur le bureau}
+
+Pour chaque logiciel que l'on voudra afficher sur le bureau vous devrez commencer par effectuer un \textbf{clic droit} sur ce dernier et sélectionner \textbf{Créer un lanceur}. Vous pourrez ensuite les remplir de la façon suivante (taper le nom du programme dans l'onglet \textbf{Nom} peut vous proposer une configuration automatique que vous pouvez accepter):
+
+\subsection{Google Chrome}
+
+\begin{lstlisting}[style=tf]
+Nom : Google Chrome
+Commentaire : Accéder à Internet
+Commande : /usr/bin/google-chrome-stable %U
+Répertoire de travail :
+Icône : google-chrome
+Options : Utilisez la notification de démarrage
+\end{lstlisting}
+
+\subsection{Discord}
+
+\begin{lstlisting}[style=tf]
+Nom : Discord
+Commentaire : All-in-one voice and text chat
+Commande : /usr/bin/Discord
+Répertoire de travail :
+Icône : /opt/Discord/discord.png
+Options :
+\end{lstlisting}
+
+\subsection{Foxit Reader}
+
+\begin{lstlisting}[style=tf]
+Nom : Foxit Reader
+Commentaire : View pdf documents
+Commande : /opt/foxitsoftware/foxitreader/FoxitReader.sh %F
+Répertoire de travail :
+Icône : FoxitReader
+Options : Utilisez la notification de démarrage
+\end{lstlisting}
+
+\subsection{PhpStorm}
+
+Attention au numéro de version !
+
+\begin{lstlisting}[style=tf]
+Nom : PhpStorm
+Commentaire : Lightning-smart PHP IDE
+Commande : */opt/PHPStorm-232.10227.13/bin/phpstorm.sh %f
+Répertoire de travail :
+Icône : /opt/PHPStorm-232.10227.13/bin/phpstorm.svg
+Options : Utilisez la notification de démarrage
+\end{lstlisting}
+
+\subsection{Sublime Text}
+
+\begin{lstlisting}[style=tf]
+	Nom : Sublime Text
+	Commentaire : Sophisticated text editor for code
+	Commande : /opt/sublime_text/sublime_text
+	Répertoire de travail :
+	Icône : sublime-text
+	Options : Utilisez la notification de démarrage
+\end{lstlisting}
+
+\subsection{Visual Studio Code}
+
+\begin{lstlisting}[style=tf]
+	Nom : Visual Studio Code
+	Commentaire :  Code Editing. Redefined.
+	Commande : /usr/share/code/code --unity-launch %F
+	Répertoire de travail :
+	Icône : vscode
+	Options :
+\end{lstlisting}
+
+\section{Thèmes pour l'Apparence}
+
+\subsection{Style}
+
+Créez le dossier qui va accueillir votre thème à l'aide de la commande suivante :
+
+\begin{lstlisting}
+mkdir .themes
+\end{lstlisting}
+
+Téléchargez le thème \textbf{Prof-Gnome-Dark 3.6} à l'adresse suivante : \href{https://www.gnome-look.org/p/1334194}{https://www.gnome-look.org/p/1334194} et enregistrez-le dans \texttt{/home/msalomon}. Vous pouvez ensuite exécutez les commandes suivantes pour l'extraire au bon endroit :
+
+\begin{lstlisting}
+tar xf Prof-Gnome-Dark-3.6.tar.xz -C .themes
+\end{lstlisting}
+
+Vous pouvez ensuite l'activer dans \texttt{Applications > Paramètres > Apparence}
+
+\subsection{Icônes}
+
+Créez le dossier qui va accueillir vos icônes à l'aide de la commande suivante :
+
+\begin{lstlisting}
+mkdir .icons
+\end{lstlisting}
+
+Vous pouvez ensuite exécutez les commandes suivantes pour télécharger le thème d'icône :
+
+\begin{lstlisting}
+wget https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/refs/tags/20231101.tar.gz
+\end{lstlisting}
+
+Vous pouvez enfin l'ajouter dans \texttt{Applications > Paramètres > Apparence > Icônes} en cliquant sur \textbf{Ajouter} et en sélectionnant l'archive que l'on vient de récupérer. Il ne vous reste plus qu'à sélectionner \texttt{Papirus-Dark}.
+
+\subsection{Thème de curseur}
+
+Vous pouvez sélectionner le thème de curseur Adwaita dans \texttt{Applications > Paramètres > Souris et pavé tactile > Thème}.

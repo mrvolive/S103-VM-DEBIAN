@@ -48,11 +48,12 @@
 	numbers=left,
 	numberstyle=\tiny,
 	breaklines=true,
-	breakatwhitespace=false,
 	tabsize=3
 }
 
 \lstset{frame=tb,
+	extendedchars=true,
+	inputencoding=latin1,
 	rulesepcolor=\color{gray},
 	framexleftmargin=5mm,
 	language=bash,
@@ -66,9 +67,33 @@
 	keywordstyle=\color{blue},
 	stringstyle=\color{mauve},
 	breaklines=true,
-	breakatwhitespace=false,
-	breakatwhitespace=true,
-	tabsize=3
+	tabsize=3,
+	literate=%
+	{é}{{\'e}}{1}%
+	{è}{{\`e}}{1}%
+	{à}{{\`a}}{1}%
+	{ç}{{\c{c}}}{1}%
+	{œ}{{\oe}}{1}%
+	{ù}{{\`u}}{1}%
+	{É}{{\'E}}{1}%
+	{È}{{\`E}}{1}%
+	{À}{{\`A}}{1}%
+	{Ç}{{\c{C}}}{1}%
+	{Œ}{{\OE}}{1}%
+	{Ê}{{\^E}}{1}%
+	{ê}{{\^e}}{1}%
+	{î}{{\^i}}{1}%
+	{ô}{{\^o}}{1}%
+	{û}{{\^u}}{1}%
+	{ä}{{\"{a}}}1
+	{ë}{{\"{e}}}1
+	{ï}{{\"{i}}}1
+	{ö}{{\"{o}}}1
+	{ü}{{\"{u}}}1
+	{û}{{\^{u}}}1
+	{â}{{\^{a}}}1
+	{Â}{{\^{A}}}1
+	{Î}{{\^{I}}}1
 }
 
 %====================== INFORMATION ET REGLES ======================
@@ -126,7 +151,7 @@ pdfstartview={FitH}}					% ajuste la page à la largueur de l'écran
 \newpage
 \pagenumbering{arabic}
 
-\setcounter{page}{5}
+\setcounter{page}{7}
 
 \input{./base.tex}
 \input{./texte.tex}
